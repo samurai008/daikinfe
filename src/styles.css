@@ -7,9 +7,22 @@
   font-family: 'Nunito', sans-serif;
 }
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.7;
+  }
+}
+
 body {
   height: 100vh;
   letter-spacing: 2.25px;
+  background: #440026;
+  animation: fadeIn 1s;
+  color: #FEFE00;
+  margin-bottom: 1em;
 }
 
 main>* {
@@ -45,7 +58,7 @@ textbox : [
     color: #05af4e;
   }
   to {
-    color: #242021;
+    color: #FEFE00;
   }
 }
 
@@ -56,13 +69,13 @@ a {
 a:hover {
   animation-name: hover;
   animation-duration: 0.5s;
-  color: #242021;
+  color: #FEFE00;
   text-decoration: none;
 }
 
 button {
   background: #df1d35;
-  color: #fff;
+  color: #CACA00;
   text-transform: uppercase;
   letter-spacing: 3px;
 }

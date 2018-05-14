@@ -1,7 +1,7 @@
 #bars-btn {
     background: none;
     border: none;
-    color: #000;
+    color: #FEFE00;
 }
 
 nav {
@@ -11,16 +11,16 @@ nav {
     margin: 0 auto;
 }
 
-nav h4 {
+.md-menu h4 {
     display: block;
 }
 
-nav h4::after {
+.md-menu h4::after {
     display: block;
     width: 100%;
     height: 5px;
     border-radius: 5px;
-    background: #242021;
+    background: #FEFE00;
     content: '';
     margin-top: 5px;
     opacity: 0;
@@ -29,14 +29,44 @@ nav h4::after {
 @keyframes h4hover {
     from {
         opacity: 0;
+        transform: translateX(-10px);
     }
     to {
         opacity: 1;
+        transform: translateX(0);
     }
 }
 
-nav h4:hover::after, nav h4:hover::before {
+.md-menu h4:hover::after, .md-menu h4:hover::before {
     animation-name: h4hover;
     animation-duration: 0.5s;
     opacity: 1;
+}
+
+.mb-nav-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    left: 0;
+    top: 0px;
+    justify-content: center;
+    background: rgb(0, 0, 0, 0.7);
+}
+
+.mb-nav-list > div {
+    margin: 14px 0;
+    width: 250px;
+}
+
+.mb-nav-list a, .mb-nav-list a:hover {
+    color: #FEFE00;
+    animation: none;
+}
+
+.mb-nav-list a > span {
+    margin-right: 10px;
 }

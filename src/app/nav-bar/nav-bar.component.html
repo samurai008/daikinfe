@@ -1,26 +1,61 @@
 <nav class="d-flex justify-content-between align-items-center">
-  <div class="d-none d-md-flex w-100 justify-content-between">
+  <div class="d-none d-md-flex w-100 justify-content-between md-menu">
     <div>
-      <h4><a href="#">Home</a></h4>
+      <h4>
+        <a href="#">Home</a>
+      </h4>
     </div>
     <div>
-      <h4><a href="#">Plan</a></h4>
+      <h4>
+        <a href="#">Plan</a>
+      </h4>
     </div>
     <div>
-      <h4><a href="#">Daikin Africa</a></h4>
+      <h4>
+        <a href="#">Daikin Africa</a>
+      </h4>
     </div>
     <div>
-      <h4><a href="#">About Inverter</a></h4>
+      <h4>
+        <a href="#">About Inverter</a>
+      </h4>
     </div>
   </div>
   <div class="d-md-none">
     <div>
-      <h3>Logo</h3>
+      <h3><a href="#">Logo</a></h3>
     </div>
   </div>
-  <div class="d-md-none">
-    <button id="bars-btn" style="font-size:2em;">
-        <i class="fa fa-bars" aria-hidden="true"> </i>
+  <div class="d-md-none" style="z-index:10000">
+    <button id="bars-btn" style="font-size:2em;" *ngIf="!mobMenu" (click)="toggleMenu()">
+      <i class="fa fa-bars" aria-hidden="true"> </i>
     </button>
+    <button (click)='toggleMenu()' *ngIf="mobMenu" style="font-size:2em;background:none;border:none;color:lime;">
+        <i class="fa fa-times"></i>
+      </button>
   </div>
 </nav>
+
+<div class="d-md-none mb-nav-list" *ngIf="mobMenu">
+  <div>
+    <h4>
+      <a href="#"><span class="fa fa-home"></span>Home</a>
+    </h4>
+  </div>
+  <div>
+    <h4>
+      <a href="#"><span class="fa fa-book"></span>Plan</a>
+    </h4>
+  </div>
+  <div>
+    <h4>
+      <a href="#"><span class="fa fa-globe"></span>Daikin Africa</a>
+    </h4>
+  </div>
+  <div>
+    <h4>
+      <a href="#"><span class="fa fa-question"></span>About Inverter</a>
+    </h4>
+  </div>
+  
+</div>
