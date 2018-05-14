@@ -1,0 +1,14 @@
+<div class="form-group country-box">
+  <input type="text"
+  placeholder="Country"
+  class="form-control"
+  #countryInput
+  [(ngModel)]="countryValue"
+  (input)="filterItem(countryInput.value)"
+  >
+  <ul class="list-unstyled">
+    <li *ngFor="let item of filteredItems">
+      <a href="#" (click)="setCountry(item)">{{item}}</a>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,75 @@
+<form [formGroup]="form" (ngSubmit)="submit(form)" class="myForm was-validated" novalidate>
+  <div>
+    <div class="form-group">
+      <app-country-box formControlName="country"></app-country-box>
+      <div class="valid-feedback">
+        <span *ngIf='!country.empty'>*Required</span>
+        <span *ngIf='country.invalid && country.touched'>Select a country!</span>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <input type="text" class="form-control" placeholder="Name" formControlName="name">
+      <div class="valid-feedback">
+        <span *ngIf='!name.touched'>*Required</span>
+        <span *ngIf='name.invalid && name.touched'>Enter a valid name!</span>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <input type="number" class="form-control" placeholder="Phone" formControlName="phone">
+      <div class="valid-feedback">
+        <span *ngIf='!phone.touched'>*Required</span>
+        <span *ngIf='phone.invalid && phone.touched'>Enter a valid phone number!</span>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <input type="text" class="form-control" placeholder="Email" formControlName="email">
+      <div class="valid-feedback">
+        <span *ngIf='!email.touched'>*Required</span>
+        <span *ngIf='email.invalid && email.touched'>Enter a valid email!</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="row">
+    <div class="col-sm-6 form-group">
+      <ul class="list-unstyled">
+        <li>
+          <input type="radio" name="type-of-use">a
+        </li>
+        <li>
+          <input type="radio" name="type-of-use">commercial
+        </li>
+        <li>
+          <a href="#">technical</a>
+        </li>
+      </ul>
+    </div>
+    <div class="col-sm-6">
+      <ul class="list-unstyled">
+        <li>
+          <a href="#">8 hours</a>
+        </li>
+        <li>
+          <a href="#">45 hours</a>
+        </li>
+        <li>
+          <a href="#">55 hours</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div>
+    <div class="form-group">
+      <input type="number" class="form-control" placeholder="Rate">
+    </div>
+  </div>
+
+  <div>
+    <button type="submit" class="btn btn-lg float-right">next</button>
+  </div>
+</form>

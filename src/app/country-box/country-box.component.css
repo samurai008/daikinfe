@@ -1,0 +1,7 @@
+.country-box ul li {
+    padding: 5px 0;
+}
+
+.country-box ul li:first-child {
+    margin-top: 2.5px;
+}

@@ -1,0 +1,42 @@
+#bars-btn {
+    background: none;
+    border: none;
+    color: #000;
+}
+
+nav {
+    padding: 1em;
+    width: 100%;
+    max-width: 768px;
+    margin: 0 auto;
+}
+
+nav h4 {
+    display: block;
+}
+
+nav h4::after {
+    display: block;
+    width: 100%;
+    height: 5px;
+    border-radius: 5px;
+    background: #242021;
+    content: '';
+    margin-top: 5px;
+    opacity: 0;
+}
+
+@keyframes h4hover {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+nav h4:hover::after, nav h4:hover::before {
+    animation-name: h4hover;
+    animation-duration: 0.5s;
+    opacity: 1;
+}

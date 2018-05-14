@@ -1,1 +1,128 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import '~font-awesome/css/font-awesome.css';
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+* {
+  font-family: 'Nunito', sans-serif;
+}
+
+body {
+  height: 100vh;
+  letter-spacing: 2.25px;
+}
+
+main>* {
+  width: 100%;
+  max-width: 768px;
+  text-transform: uppercase;
+}
+
+/* colors
+body background: #d8e7a4;
+
+button : [
+    background: #df1d35;
+    color: #fff;
+]
+
+link : [
+    color: #05af4e;
+    hover : [
+        color: #242021;
+    ]
+]
+
+textbox : [
+    background: #cc448e;
+]
+*/
+
+/* Links */
+
+@keyframes hover {
+  from {
+    color: #05af4e;
+  }
+  to {
+    color: #242021;
+  }
+}
+
+a {
+  color: #05af4e;
+}
+
+a:hover {
+  animation-name: hover;
+  animation-duration: 0.5s;
+  color: #242021;
+  text-decoration: none;
+}
+
+button {
+  background: #df1d35;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+input[type="text"],
+input[type="number"] {
+  background: #cc448e;
+  border: none;
+  letter-spacing: 2.25px;
+  color: #fff;
+  font-size: 150%;
+}
+
+*:focus {
+    outline: none;
+    border: none;
+}
+
+select {
+  background: #cc448e;
+}
+
+input::-webkit-input-placeholder {
+  color: peachpuff !important;
+}
+
+::-moz-placeholder {
+  color: peachpuff !important;
+}
+
+:-ms-input-placeholder {
+  color: peachpuff !important;
+}
+
+::placeholder {
+  color: peachpuff !important;
+}
+
+input::placeholder {
+    color: peachpuff !important;
+}
+
+/* // Extra small devices (portrait phones, less than 576px)
+// No media query for `xs` since this is the default in Bootstrap
+// Small devices (landscape phones, 576px and up) */
+
+@media (min-width: 576px) {}
+
+/* // Medium devices (tablets, 768px and up) */
+
+@media (min-width: 768px) {
+  .display-mob {
+    display: none;
+  }
+}
+
+/* // Large devices (desktops, 992px and up) */
+
+@media (min-width: 992px) {}
+
+/* // Extra large devices (large desktops, 1200px and up) */
+
+@media (min-width: 1200px) {}
