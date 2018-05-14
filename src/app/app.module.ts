@@ -4,7 +4,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { NavBarItemsComponent } from './nav-bar-items/nav-bar-items.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { CustFormComponent } from './cust-form/cust-form.component';
 import { CountryBoxComponent } from './country-box/country-box.component';
@@ -18,7 +17,6 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    NavBarItemsComponent,
     NavBarComponent,
     CustFormComponent,
     CountryBoxComponent,

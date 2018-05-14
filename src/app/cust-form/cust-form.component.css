@@ -2,3 +2,59 @@
     max-width: 768px;
     margin: 0 auto;
 }
+
+[type="radio"] {
+    position: absolute;
+    left:-9999px;
+}
+
+.new-radio > div {
+    display: flex;
+    align-items: center;
+}
+
+.new-radio > div > * {
+    display: block;
+    margin: 5px;
+}
+
+.new-radio > div > span {
+    background: #828200;
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+}
+
+.new-radio > div > label {
+    color: #828200;
+}
+
+[type="radio"]:checked + div span{
+    background: #FEFE00;
+}
+
+[type="radio"]:checked + div label {
+    color: #FEFE00;
+}
+
+.fancy-header {
+    text-transform: uppercase;
+}
+
+.fancy-header > h4 {
+    text-align: center;
+    z-index: 1000;
+}
+
+.fancy-header > h4::after {
+    display: block;
+    content: '';
+    border-top: 2px solid #FEFE00;
+    transform: translateY(-15px);
+    z-index: -1;
+}
+
+.fancy-header > h4 > span {
+    background: #440026;
+    padding: 0 1.5em;
+}
