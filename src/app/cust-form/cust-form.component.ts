@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cust-form',
@@ -8,7 +9,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class CustFormComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   fields = {
     'country': new FormControl(),
@@ -37,6 +38,7 @@ export class CustFormComponent implements OnInit {
 
   submit(form) {
     console.log(form.value);
+    this.router.navigate(['/result']);
   }
 
 }

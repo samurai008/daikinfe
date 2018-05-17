@@ -11,6 +11,7 @@ import { ResultComponent } from './result/result.component';
 
 const appRoutes: Routes = [
   {path: 'customer-information', component: CustFormComponent},
+  { path: 'result', component: ResultComponent },
   {path: '', redirectTo: '/customer-information', pathMatch: 'full'}
 ];
 

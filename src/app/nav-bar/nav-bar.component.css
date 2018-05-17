@@ -15,11 +15,16 @@ nav {
     display: block;
 }
 
+.md-menu h4 a {
+    display: block;
+    padding: 0.5em 1em;
+}
+
 .md-menu h4::after {
     display: block;
     width: 100%;
-    height: 5px;
-    border-radius: 5px;
+    height: 2px;
+    border-radius: 2px;
     background: #FEFE00;
     content: '';
     margin-top: 5px;
@@ -69,4 +74,8 @@ nav {
 
 .mb-nav-list a > span {
     margin-right: 10px;
+}
+
+.active {
+    border: 1px solid #FEFE00;
 }

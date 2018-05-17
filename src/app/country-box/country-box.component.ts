@@ -42,6 +42,7 @@ export class CountryBoxComponent implements OnInit, ControlValueAccessor {
   setCountry(item) {
     this.countryValue = item;
     this.propogateChange(this.countryValue);
+    return false;
   }
 
   ngOnInit() {

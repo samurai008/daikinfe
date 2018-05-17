@@ -42,19 +42,19 @@
 }
 
 .fancy-header > h4 {
-    text-align: center;
+    text-align: left;
     z-index: 1000;
 }
 
-.fancy-header > h4::after {
+/* .fancy-header > h4::after {
     display: block;
     content: '';
     border-top: 2px solid #FEFE00;
     transform: translateY(-15px);
     z-index: -1;
-}
+} */
 
 .fancy-header > h4 > span {
     background: #440026;
-    padding: 0 1.5em;
+    padding: 0;
 }
