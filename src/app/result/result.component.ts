@@ -6,10 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./result.component.css']
 })
 export class ResultComponent implements OnInit {
+  activeResultBckColor: Boolean = false;
 
   constructor() { }
 
   ngOnInit() {
+    this.activeResultBckColor = true;
+  }
+
+  getBckColorExp () {
+    return this.activeResultBckColor;
   }
 
 }

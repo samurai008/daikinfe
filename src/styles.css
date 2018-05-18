@@ -18,11 +18,15 @@
 
 body {
   height: 100vh;
+  padding: 0;
+}
+
+.art-board {
+  height: 100%;
   letter-spacing: 2.25px;
-  background: #440026;
   animation: fadeIn 1s;
   color: #FEFE00;
-  margin-bottom: 1em;
+  padding: 1em;
 }
 
 main>* {
@@ -122,7 +126,8 @@ input::placeholder {
 // No media query for `xs` since this is the default in Bootstrap
 // Small devices (landscape phones, 576px and up) */
 
-@media (min-width: 576px) {}
+@media (min-width: 576px) {
+}
 
 /* // Medium devices (tablets, 768px and up) */
 
