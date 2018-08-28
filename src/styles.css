@@ -85,7 +85,8 @@ button {
 }
 
 input[type="text"],
-input[type="number"] {
+input[type="number"],
+input[type="password"] {
   background: #cc448e;
   border: none;
   letter-spacing: 2.25px;

@@ -13,7 +13,6 @@ export class AppComponent implements OnInit {
   expToChangeBckColor: ResultComponent;
 
   constructor(private element: ElementRef) {
-    
   }
 
   ngOnInit() {
