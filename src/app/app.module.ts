@@ -37,7 +37,7 @@ const appRoutes: Routes = [
     ReactiveFormsModule,
     RouterModule.forRoot(
       appRoutes,
-      { enableTracing: true }
+      { enableTracing: false}
     ),
     HttpClientModule
   ],

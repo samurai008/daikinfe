@@ -9,7 +9,8 @@ import { Router } from '@angular/router';
 })
 export class CustFormComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router) {
+   }
 
   fields = {
     'country': new FormControl(),

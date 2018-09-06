@@ -35,10 +35,12 @@ export class LoginComponent implements OnInit {
     this.loginService.doLogin(form.value)
     .subscribe((res) => {
       console.log(res);
+      // store user info returned on successful login
+      localStorage.setItem('userInfo', JSON.stringify(res));
       this.nagivateToCustFormComponent();
     }, (err) => {
       console.error(err);
-      this.nagivateToCustFormComponent();
+      // this.nagivateToCustFormComponent();
     });
   }
 

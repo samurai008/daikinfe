@@ -5,7 +5,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   providedIn: 'root'
 })
 export class LoginServiceService {
-  uri = 'http://inverterforafrica.com/apis/login';
+  uri = 'http://inverterforafrica.com/login';
 
   constructor(private http: HttpClient) { }
 
