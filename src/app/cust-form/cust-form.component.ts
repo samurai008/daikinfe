@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { CustomerDetailService } from '../customer-detail.service';
 
 @Component({
   selector: 'app-cust-form',
@@ -9,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class CustFormComponent implements OnInit {
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private customerDetailService: CustomerDetailService) {
    }
 
   fields = {
@@ -17,6 +18,7 @@ export class CustFormComponent implements OnInit {
     'name': new FormControl('', Validators.required),
     'phone': new FormControl('', Validators.required),
     'email': new FormControl('', Validators.required),
+    'application': new FormControl(''),
   };
 
   get name() {
@@ -31,6 +33,9 @@ export class CustFormComponent implements OnInit {
   get email() {
     return this.form.get('email');
   }
+  get application() {
+    return this.form.get('application');
+  }
 
   form = new FormGroup(this.fields);
 
@@ -39,7 +44,9 @@ export class CustFormComponent implements OnInit {
 
   submit(form) {
     console.log(form.value);
-    this.router.navigate(['/result']);
+    this.customerDetailService.addCustomerDetails(form.value)
+    .subscribe(res => console.log(res), err => console.error(err));
+    // this.router.navigate(['/result']);
   }
 
 }

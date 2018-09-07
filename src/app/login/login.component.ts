@@ -29,6 +29,13 @@ export class LoginComponent implements OnInit {
   private router: Router) { }
 
   ngOnInit() {
+    //  check userInfo exits in storage
+    const userInfo = JSON.parse(localStorage.getItem('userInfo'));
+    if (userInfo && userInfo !== undefined) {
+      this.router.navigate(['customer-information'])
+      .then(res => console.log(res))
+      .catch(err => console.error(err));
+    }
   }
 
   submit(form) {
@@ -36,7 +43,9 @@ export class LoginComponent implements OnInit {
     .subscribe((res) => {
       console.log(res);
       // store user info returned on successful login
-      localStorage.setItem('userInfo', JSON.stringify(res));
+      if (localStorage.getItem('userInfo') === undefined) {
+        localStorage.setItem('userInfo', JSON.stringify(res));
+      }
       this.nagivateToCustFormComponent();
     }, (err) => {
       console.error(err);

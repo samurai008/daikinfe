@@ -5,7 +5,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   providedIn: 'root'
 })
 export class CustomerDetailService {
-  uri = 'http://inverterforafrica.com/apis/add-customer';
+  uri = 'http://inverterforafrica.com/add-customer';
 
   constructor(private http: HttpClient) { }
 

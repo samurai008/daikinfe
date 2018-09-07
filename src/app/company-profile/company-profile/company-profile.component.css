@@ -1,0 +1,33 @@
+.theme-company-profile {
+    color: black;
+}
+
+.theme-company-profile div {
+    margin: 8px 0;
+}
+
+.profile-picture {
+    width: 175px;
+    height: 175px;
+    overflow: hidden;
+    border: 5px solid lightgrey;
+    border-radius: 175px;
+}
+
+.profile-picture img {
+    width: 175px;
+}
+
+.company-name span {
+    font-weight: bold;
+}
+
+.contact {
+    display: table;
+    width: 100%;
+}
+
+.contact div {
+    display: table-cell;
+    text-align: center;
+}

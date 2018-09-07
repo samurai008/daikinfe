@@ -13,11 +13,13 @@ import { LoginComponent } from './login/login.component';
 
 import { LoginServiceService } from './login-service.service';
 import { ProfileBubbleComponent } from './profile-bubble/profile-bubble.component';
+import { CompanyProfileComponent } from './company-profile/company-profile/company-profile.component';
 
 const appRoutes: Routes = [
   {path: 'customer-information', component: CustFormComponent},
   { path: 'result', component: ResultComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'company-profile', component: CompanyProfileComponent },
   {path: '', redirectTo: '/login', pathMatch: 'full'}
 ];
 
@@ -29,7 +31,8 @@ const appRoutes: Routes = [
     CountryBoxComponent,
     ResultComponent,
     LoginComponent,
-    ProfileBubbleComponent
+    ProfileBubbleComponent,
+    CompanyProfileComponent
   ],
   imports: [
     BrowserModule,
