@@ -14,6 +14,7 @@ import { LoginComponent } from './login/login.component';
 import { LoginServiceService } from './login-service.service';
 import { ProfileBubbleComponent } from './profile-bubble/profile-bubble.component';
 import { CompanyProfileComponent } from './company-profile/company-profile/company-profile.component';
+import { LoadingComponent } from './loading/loading.component';
 
 const appRoutes: Routes = [
   {path: 'customer-information', component: CustFormComponent},
@@ -32,7 +33,8 @@ const appRoutes: Routes = [
     ResultComponent,
     LoginComponent,
     ProfileBubbleComponent,
-    CompanyProfileComponent
+    CompanyProfileComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,

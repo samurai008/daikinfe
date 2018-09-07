@@ -9,6 +9,7 @@ import { CustomerDetailService } from '../customer-detail.service';
   styleUrls: ['./cust-form.component.css']
 })
 export class CustFormComponent implements OnInit {
+  showLoader = false;
 
   constructor(private router: Router, private customerDetailService: CustomerDetailService) {
    }
@@ -43,9 +44,16 @@ export class CustFormComponent implements OnInit {
   }
 
   submit(form) {
+    this.showLoader = true;
     console.log(form.value);
     this.customerDetailService.addCustomerDetails(form.value)
-    .subscribe(res => console.log(res), err => console.error(err));
+    .subscribe(res => {
+      console.log(res);
+      this.showLoader = false;
+    }, err => {
+      console.error(err);
+      this.showLoader = false;
+    });
     // this.router.navigate(['/result']);
   }
 
