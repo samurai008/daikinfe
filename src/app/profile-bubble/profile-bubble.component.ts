@@ -14,7 +14,7 @@ export class ProfileBubbleComponent implements OnInit {
 
   ngOnInit() {
     this.userInfo = JSON.parse(localStorage.getItem('userInfo'));
-    if (this.userInfo !== undefined) {
+    if (this.userInfo !== undefined || this.userInfo !== null) {
       console.log(this.userInfo);
       this.bubbleText = this.userInfo['companyName'];
       console.log(this.bubbleEl.nativeElement.style);

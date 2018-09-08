@@ -1,12 +1,17 @@
+<div class="background"></div>
+
 <div class="section-col theme-company-profile">
   <div class="profile-picture">
     <img src={{this.imageUrl}}>
+  </div>
+  <div>
+    <button class="logout" (click)="logout()">Logout</button>
   </div>
   <div class="company-name">
     <span>{{this.userInfo.companyName}}</span>
   </div>
   <div class="contact">
-    <div>{{this.userInfo.email}}</div>
-    <div>{{this.userInfo.phone}}</div>
+    <div><span>{{this.userInfo.email}}</span></div>
+    <div><span>{{this.userInfo.phone}}</span></div>
   </div>
 </div>

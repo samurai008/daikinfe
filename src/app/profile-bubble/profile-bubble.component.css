@@ -9,7 +9,7 @@
 }
 
 .bubble {
-    background: lightblue;
+    background: #3a262b;
     width: 150px;
     height: 150px;
     border-radius: 150px;
@@ -24,10 +24,5 @@
 
 .bubble > a {
     display: block;
-    color: black;
     transform: translateY(45px);
-}
-
-.bubble > a:hover {
-    color: grey !important;
 }

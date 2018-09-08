@@ -1,7 +1,13 @@
-.theme-company-profile {
-    color: black;
+.background {
+    background-color: #440026;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    animation: fadeIn 0.5s;
+    top: 0;
+    left: 0;
 }
-
 .theme-company-profile div {
     margin: 8px 0;
 }
@@ -30,4 +36,38 @@
 .contact div {
     display: table-cell;
     text-align: center;
+}
+
+.contact div > span {
+    transition: 0.2s ease;
+    padding: 5px;
+    border-radius: 2px;
+}
+
+.contact div > span:hover {
+    background: #3a262b;
+}
+
+.logout {
+    background: lightyellow;
+    color: black;
+    padding: 5px;
+    border-radius: 2px;
+    box-shadow: inset 1px 2px 0px green;
+    border: none;
+    transition: 0.2s ease-in;
+    cursor: pointer;
+}
+
+.logout:hover {
+    animation: fillgreen 0.2s ease-in forwards;
+}
+
+@keyframes fillgreen {
+    from {
+        box-shadow:  inset 1px 2px 0px green;
+    }
+    to {
+        box-shadow:  inset 1px 34px 0px green;;
+    }
 }
