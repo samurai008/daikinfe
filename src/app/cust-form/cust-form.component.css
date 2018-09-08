@@ -12,6 +12,7 @@
 .myForm {
     max-width: 768px;
     margin: 0 auto;
+    padding-bottom: 4.5em;
 }
 
 [type="radio"] {
@@ -64,3 +65,4 @@
     transform: translateY(-15px);
     z-index: -1;
 } */
+

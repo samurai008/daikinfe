@@ -43,21 +43,21 @@
       </h4>
       <ul class="list-unstyled">
         <li class="new-radio">
-          <input type="radio" id="one" name="type-of-use">
+          <input type="radio" formControlName="application" name="application" value="personal" id="one">
           <div>
             <span></span>
             <label for="one">Personal</label>
           </div>
         </li>
         <li class="new-radio">
-          <input type="radio" id="two" name="type-of-use">
+          <input type="radio" formControlName="application" name="application" value="commercial" id="two">
           <div>
             <span></span>
             <label for="two">Commercial</label>
           </div>
         </li>
         <li class="new-radio">
-          <input type="radio" id="three" name="type-of-use">
+          <input type="radio" formControlName="application" name="application" value="technical" id="three">
           <div>
             <span></span>
             <label for="three">Technical</label>
@@ -65,7 +65,7 @@
         </li>
       </ul>
     </div>
-    <div class="col-sm-6 form-group fancy-header">
+    <!-- <div class="col-sm-6 form-group fancy-header">
       <h4>
         <span>Number of hours</span>
       </h4>
@@ -92,15 +92,17 @@
           </div>
         </li>
       </ul>
-    </div>
+    </div> -->
   </div>
 
-    <div class="form-group">
+    <!-- <div class="form-group">
       <input type="number" class="form-control" placeholder="Rate">
-    </div>
+    </div> -->
 
   <div class="form-group">
     <button type="submit" class="btn btn-lg float-right">next</button>
     <div style="clear:both"></div>
   </div>
 </form>
+
+<app-loading *ngIf="showLoader"></app-loading>

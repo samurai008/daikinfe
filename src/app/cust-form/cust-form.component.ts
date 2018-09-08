@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { CustomerDetailService } from '../customer-detail.service';
 
 @Component({
   selector: 'app-cust-form',
@@ -8,14 +9,17 @@ import { Router } from '@angular/router';
   styleUrls: ['./cust-form.component.css']
 })
 export class CustFormComponent implements OnInit {
+  showLoader = false;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private customerDetailService: CustomerDetailService) {
+   }
 
   fields = {
     'country': new FormControl(),
     'name': new FormControl('', Validators.required),
     'phone': new FormControl('', Validators.required),
     'email': new FormControl('', Validators.required),
+    'application': new FormControl(''),
   };
 
   get name() {
@@ -30,6 +34,9 @@ export class CustFormComponent implements OnInit {
   get email() {
     return this.form.get('email');
   }
+  get application() {
+    return this.form.get('application');
+  }
 
   form = new FormGroup(this.fields);
 
@@ -37,8 +44,17 @@ export class CustFormComponent implements OnInit {
   }
 
   submit(form) {
+    this.showLoader = true;
     console.log(form.value);
-    this.router.navigate(['/result']);
+    this.customerDetailService.addCustomerDetails(form.value)
+    .subscribe(res => {
+      console.log(res);
+      this.showLoader = false;
+    }, err => {
+      console.error(err);
+      this.showLoader = false;
+    });
+    // this.router.navigate(['/result']);
   }
 
 }

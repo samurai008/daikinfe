@@ -1,6 +1,7 @@
 import { Component, ElementRef, ViewChild, OnInit } from '@angular/core';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { ResultComponent } from './result/result.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -12,11 +13,9 @@ export class AppComponent implements OnInit {
   @ViewChild(ResultComponent)
   expToChangeBckColor: ResultComponent;
 
-  constructor(private element: ElementRef) {
-    
+  constructor(private element: ElementRef, private router: Router) {
   }
 
   ngOnInit() {
-    console.log(this.expToChangeBckColor);
   }
 }

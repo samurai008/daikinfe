@@ -1,0 +1,16 @@
+<div class="bckCustFormComponent"></div>
+
+<form [formGroup]="form" (ngSubmit)="submit(form)" class="login-form was-validated" novalidate>
+  <div class="form-group">
+    <input type="text" class="form-control" formControlName="username" placeholder="username">
+  </div>
+
+  <div class="form-group">
+    <input type="password" class="form-control" formControlName="password" placeholder="password">
+  </div>
+
+  <div class="form-group">
+    <button type="submit" class="btn btn-lg float-right">login</button>
+    <div style="clear:both"></div>
+  </div>
+</form>
