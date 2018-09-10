@@ -22,3 +22,24 @@
 .login-form .form-group {
     width: 100%;
 }
+
+.error {
+    text-align: center;
+}
+
+.fade-drag-in {
+    transform: translateY(-5px);
+    opacity: 0;
+    animation: fadeDrag 0.3s ease-in forwards;
+}
+
+@keyframes fadeDrag {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

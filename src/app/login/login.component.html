@@ -1,6 +1,10 @@
 <div class="bckCustFormComponent"></div>
 
 <form [formGroup]="form" (ngSubmit)="submit(form)" class="login-form was-validated" novalidate>
+  <div class="form-group text-center" [ngClass]="{'d-none': !loginError, 'fade-drag-in': loginError}">
+    Invalid username or password
+  </div>
+
   <div class="form-group">
     <input type="text" class="form-control" formControlName="username" placeholder="username">
   </div>

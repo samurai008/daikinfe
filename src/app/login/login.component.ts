@@ -11,6 +11,7 @@ import { LoadingService } from '../loading.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  loginError = false;
 
   fields = {
     'username': new FormControl('', Validators.required),
@@ -53,6 +54,7 @@ export class LoginComponent implements OnInit {
       this.nagivateToCustFormComponent();
     }, (err) => {
       console.error(err);
+      this.loginError = true;
       this.loadingService.dismiss();
     });
   }

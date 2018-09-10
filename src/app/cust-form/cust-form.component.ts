@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CustomerDetailService } from '../customer-detail.service';
 import { StorageService } from '../storage.service';
+import { LoadingService } from '../loading.service';
 
 @Component({
   selector: 'app-cust-form',
@@ -10,16 +11,15 @@ import { StorageService } from '../storage.service';
   styleUrls: ['./cust-form.component.css']
 })
 export class CustFormComponent implements OnInit {
-  showLoader = false;
-
   constructor(private router: Router, private customerDetailService: CustomerDetailService,
-  private storageService: StorageService) {
+  private storageService: StorageService,
+  private loadingService: LoadingService) {
     if (!this.storageService.checkStorageForUserInfo()) {
       this.router.navigate(['login'])
       .then(res => console.log('from ==> company-profile, no auth, redirect to login'),
       err => console.log(err));
     }
-   }
+  }
 
   fields = {
     'country': new FormControl(),
@@ -51,15 +51,15 @@ export class CustFormComponent implements OnInit {
   }
 
   submit(form) {
-    this.showLoader = true;
+    this.loadingService.display();
     console.log(form.value);
     this.customerDetailService.addCustomerDetails(form.value)
     .subscribe(res => {
+      this.loadingService.dismiss();
       console.log(res);
-      this.showLoader = false;
     }, err => {
+      this.loadingService.dismiss();
       console.error(err);
-      this.showLoader = false;
     });
     // this.router.navigate(['/result']);
   }
