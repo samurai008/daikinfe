@@ -24,18 +24,15 @@
     width: 175px;
 }
 
-.company-name span {
-    font-weight: bold;
-}
-
 .contact {
-    display: table;
+    display: flex;
     width: 100%;
+    justify-content: center;
 }
 
 .contact div {
-    display: table-cell;
     text-align: center;
+    margin: 0 1em;
 }
 
 .contact div > span {
@@ -44,30 +41,10 @@
     border-radius: 2px;
 }
 
+.contact div > span > i {
+    margin-right: 3px;
+}
+
 .contact div > span:hover {
     background: #3a262b;
-}
-
-.logout {
-    background: lightyellow;
-    color: black;
-    padding: 5px;
-    border-radius: 2px;
-    box-shadow: inset 1px 2px 0px green;
-    border: none;
-    transition: 0.2s ease-in;
-    cursor: pointer;
-}
-
-.logout:hover {
-    animation: fillgreen 0.2s ease-in forwards;
-}
-
-@keyframes fillgreen {
-    from {
-        box-shadow:  inset 1px 2px 0px green;
-    }
-    to {
-        box-shadow:  inset 1px 34px 0px green;;
-    }
 }

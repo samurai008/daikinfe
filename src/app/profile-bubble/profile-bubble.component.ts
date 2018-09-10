@@ -1,4 +1,5 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, Input } from '@angular/core';
+import { StorageService } from '../storage.service';
 
 @Component({
   selector: 'app-profile-bubble',
@@ -8,19 +9,12 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 export class ProfileBubbleComponent implements OnInit {
   userInfo;
   bubbleText = 'Login';
-  @ViewChild('bubble') bubbleEl;
+  @Input() cname;
 
-  constructor() { }
+  constructor(private storageService: StorageService) { }
 
   ngOnInit() {
-    this.userInfo = JSON.parse(localStorage.getItem('userInfo'));
-    if (this.userInfo !== undefined || this.userInfo !== null) {
-      console.log(this.userInfo);
-      this.bubbleText = this.userInfo['companyName'];
-      console.log(this.bubbleEl.nativeElement.style);
-      this.bubbleEl.nativeElement.style['backgroundImage'] = 'http://inverterforafrica.com' + this.userInfo['logoUrl'];
-      this.bubbleEl.nativeElement.style['backgroundPosition'] = 'center';
-    }
+    this.storageService.loggedInText.subscribe(cname => this.cname = cname);
   }
 
 }

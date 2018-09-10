@@ -1,23 +1,13 @@
 <nav class="d-flex justify-content-between align-items-center">
-  <div class="d-none d-md-flex w-100 justify-content-between md-menu">
-    <div>
+  <div class="d-none d-md-flex w-100 justify-content-between align-items-center md-menu">
+    <div *ngFor="let item of navItems">
       <h4>
-        <a routerLink="/customer-information" routerLinkActive="active">Home</a>
+        <a routerLink={{item.link}} routerLinkActive="active">{{item.title}}</a>
       </h4>
     </div>
     <div>
       <h4>
-        <a href="#">Plan</a>
-      </h4>
-    </div>
-    <div>
-      <h4>
-        <a href="#">Daikin Africa</a>
-      </h4>
-    </div>
-    <div>
-      <h4>
-        <a href="#">About Inverter</a>
+        <app-profile-bubble [cname]="cname"></app-profile-bubble>
       </h4>
     </div>
   </div>
@@ -37,24 +27,15 @@
 </nav>
 
 <div class="d-md-none mb-nav-list" *ngIf="mobMenu">
-  <div>
+  <div *ngFor="let item of navItems">
     <h4>
-      <a href="#"><span class="fa fa-home"></span>Home</a>
+      <a routerLink={{item.link}} routerLinkActive="active"><span class={{item.icon}}></span>{{item.title}}</a>
     </h4>
   </div>
   <div>
     <h4>
-      <a href="#"><span class="fa fa-book"></span>Plan</a>
-    </h4>
-  </div>
-  <div>
-    <h4>
-      <a href="#"><span class="fa fa-globe"></span>Daikin Africa</a>
-    </h4>
-  </div>
-  <div>
-    <h4>
-      <a href="#"><span class="fa fa-question"></span>About Inverter</a>
+      <a routerLink="company-profile" routerLinkActive="active"><span class="fa fa-user"></span>{{cname}}</a>
+      <!-- <app-profile-bubble [cname]="cname"></app-profile-bubble> -->
     </h4>
   </div>
   

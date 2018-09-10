@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { LoginServiceService } from '../login-service.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { StorageService } from '../storage.service';
 
 @Component({
   selector: 'app-login',
@@ -26,12 +27,13 @@ export class LoginComponent implements OnInit {
   }
 
   constructor(private loginService: LoginServiceService,
-  private router: Router) { }
+  private router: Router,
+  private storageService: StorageService) { }
 
   ngOnInit() {
     //  check userInfo exits in storage
-    const userInfo = JSON.parse(localStorage.getItem('userInfo'));
-    if (userInfo !== null && userInfo !== undefined) {
+    if (this.storageService.checkStorageForUserInfo()) {
+      console.log('this.storageService.checkStorageForUserInfo() = ', this.storageService.checkStorageForUserInfo());
       this.router.navigate(['customer-information'])
       .then(res => console.log(res))
       .catch(err => console.error(err));
@@ -43,11 +45,10 @@ export class LoginComponent implements OnInit {
     .subscribe((res) => {
       console.log(res);
       // store user info returned on successful login
-      localStorage.setItem('userInfo', JSON.stringify(res));
+      this.storageService.saveUserInfo(res);
       this.nagivateToCustFormComponent();
     }, (err) => {
       console.error(err);
-      // this.nagivateToCustFormComponent();
     });
   }
 

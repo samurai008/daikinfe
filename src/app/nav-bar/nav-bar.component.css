@@ -13,6 +13,7 @@ nav {
 
 .md-menu h4 {
     display: block;
+    font-size: 16px;
 }
 
 .md-menu h4 a {
@@ -74,8 +75,4 @@ nav {
 
 .mb-nav-list a > span {
     margin-right: 10px;
-}
-
-.active {
-    border: 1px solid #FEFE00;
 }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CustomerDetailService } from '../customer-detail.service';
+import { StorageService } from '../storage.service';
 
 @Component({
   selector: 'app-cust-form',
@@ -11,7 +12,13 @@ import { CustomerDetailService } from '../customer-detail.service';
 export class CustFormComponent implements OnInit {
   showLoader = false;
 
-  constructor(private router: Router, private customerDetailService: CustomerDetailService) {
+  constructor(private router: Router, private customerDetailService: CustomerDetailService,
+  private storageService: StorageService) {
+    if (!this.storageService.checkStorageForUserInfo()) {
+      this.router.navigate(['login'])
+      .then(res => console.log('from ==> company-profile, no auth, redirect to login'),
+      err => console.log(err));
+    }
    }
 
   fields = {

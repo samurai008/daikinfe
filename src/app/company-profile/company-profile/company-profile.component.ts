@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { StorageService } from '../../storage.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-company-profile',
@@ -9,10 +10,13 @@ import { StorageService } from '../../storage.service';
 export class CompanyProfileComponent implements OnInit {
   userInfo;
   imageUrl = 'https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX23315694.jpg';
-  constructor(private storage: StorageService) {
-    this.storage.checkAuthAndNavigateTo(['login'])
-    .then(res => console.log('checkAuthAndNavigateTo :: ', res)
-        , err => console.error(err));
+  constructor(private storageService: StorageService, private router: Router) {
+    // check if user if logged in else redirect to login
+    if (!this.storageService.checkStorageForUserInfo()) {
+      this.router.navigate(['login'])
+      .then(res => console.log('from ==> company-profile, no auth, redirect to login'),
+      err => console.log(err));
+    }
   }
 
   ngOnInit() {
@@ -21,7 +25,7 @@ export class CompanyProfileComponent implements OnInit {
   }
 
   logout() {
-    this.storage.logout()
+    this.storageService.logout()
     .then(res => console.log('LOGGED OUT', res))
     .catch(err => console.error('LOGOUT ERROR', err));
   }
