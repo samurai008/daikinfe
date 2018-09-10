@@ -11,6 +11,7 @@ import { LoadingService } from '../loading.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  asd = 'asda';
   loginError = false;
 
   fields = {

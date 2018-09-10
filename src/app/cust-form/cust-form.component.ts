@@ -11,6 +11,7 @@ import { LoadingService } from '../loading.service';
   styleUrls: ['./cust-form.component.css']
 })
 export class CustFormComponent implements OnInit {
+  formSubmissionError = false;
   constructor(private router: Router, private customerDetailService: CustomerDetailService,
   private storageService: StorageService,
   private loadingService: LoadingService) {
@@ -58,6 +59,7 @@ export class CustFormComponent implements OnInit {
       this.loadingService.dismiss();
       console.log(res);
     }, err => {
+      this.formSubmissionError = true;
       this.loadingService.dismiss();
       console.error(err);
     });
