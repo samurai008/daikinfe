@@ -15,6 +15,7 @@ import { LoginServiceService } from './login-service.service';
 import { ProfileBubbleComponent } from './profile-bubble/profile-bubble.component';
 import { CompanyProfileComponent } from './company-profile/company-profile/company-profile.component';
 import { LoadingComponent } from './loading/loading.component';
+import { LoadingService } from './loading.service';
 
 const appRoutes: Routes = [
   {path: 'customer-information', component: CustFormComponent},
@@ -47,6 +48,7 @@ const appRoutes: Routes = [
     HttpClientModule
   ],
   providers: [
+    LoadingService
   ],
   bootstrap: [AppComponent]
 })

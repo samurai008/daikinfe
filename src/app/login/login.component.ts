@@ -3,6 +3,7 @@ import { LoginServiceService } from '../login-service.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { StorageService } from '../storage.service';
+import { LoadingService } from '../loading.service';
 
 @Component({
   selector: 'app-login',
@@ -28,7 +29,8 @@ export class LoginComponent implements OnInit {
 
   constructor(private loginService: LoginServiceService,
   private router: Router,
-  private storageService: StorageService) { }
+  private storageService: StorageService,
+  private loadingService: LoadingService) { }
 
   ngOnInit() {
     //  check userInfo exits in storage
@@ -41,14 +43,17 @@ export class LoginComponent implements OnInit {
   }
 
   submit(form) {
+    this.loadingService.display();
     this.loginService.doLogin(form.value)
     .subscribe((res) => {
       console.log(res);
       // store user info returned on successful login
       this.storageService.saveUserInfo(res);
+      this.loadingService.dismiss();
       this.nagivateToCustFormComponent();
     }, (err) => {
       console.error(err);
+      this.loadingService.dismiss();
     });
   }
 
